@@ -1,21 +1,39 @@
 package bookstore.projekti.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Book {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    long id;
     String title, author, isbn;
     int publicationYear;
     double price;
 
     public Book(){
-        
+        super();
     }
 
     public Book(String title, String author, String isbn, int publicationYear, double price) {
+        super();
         this.title = title;
         this.author = author;
         this.isbn = isbn;
         this.publicationYear = publicationYear;
         this.price = price;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getTitle() {
