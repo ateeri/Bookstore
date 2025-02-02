@@ -18,8 +18,10 @@ public class ProjektiApplication {
 	@Bean
 	public CommandLineRunner bookCmd(BookRepository repository){
 		return (args) -> {
-			repository.save(new Book("Title", "Author", "ISBN", 2000, 2));
-			repository.save(new Book("book1", "author1", "ISBN1", 2001, 2.1));
+			repository.save(new Book("Talo taivaansinisellä merellä", "TJ Klune", "9789511383260", 2021, 15.95));
+			repository.save(new Book("Rósa & Björk", "Satu Rämö", "9789510504048", 2024, 13.95));
+			repository.save(new Book("Käräjät", "Markus Nummi", "9789511370338", 2024, 36.95));
+			repository.save(new Book("Elämäni miehet", "Samuli Putro", "9789510510049", 2025, 34.95));
 		};
 	}
 
